@@ -3,10 +3,11 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-  'gopls',
-  'lua_ls'
+  -- "clangd"
+  -- 'tsserver',
+  -- 'rust_analyzer',
+  -- 'gopls',
+  -- 'lua_ls'
 })
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
@@ -71,3 +72,11 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.black,
+    },
+})

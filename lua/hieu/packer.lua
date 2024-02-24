@@ -12,9 +12,11 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use "nvimtools/none-ls.nvim"
 
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'sainnhe/everforest', as = 'everforest' })
+    use({ 'morhetz/gruvbox', as = 'gruvbox' })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('ThePrimeagen/harpoon')
@@ -71,7 +73,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use("nvim-treesitter/nvim-treesitter-context");
+    -- use("nvim-treesitter/nvim-treesitter-context");
     use("mbbill/undotree")
     use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 end)
